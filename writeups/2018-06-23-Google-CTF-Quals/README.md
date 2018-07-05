@@ -43,7 +43,7 @@
  - [ ] 453 BBS
  - [ ] 210 Cat Chat
  - [ ] 326 gCalc
- - [x] [121 JS Safe 2.0](#121-web--js-safe-2.0)
+ - [x] [121 JS Safe 2.0](#121-web--js-safe-20)
  - [ ] 246 Translate
 
 ---
@@ -214,13 +214,13 @@ In fact, we can repeat this process. If we multiply the flag by `4` (or better, 
 
       x = decrypt(c * cf)
         = 4p
-    If x < n, then
+    If      x <  n, then
       LSB of x mod n is 0! (a left shift of two)
-    If n ≤ x < 2x, then
+    If  n ≤ x < 2n, then
       LSB of x mod n is 1! (because n is odd)
-    If 2n ≤ x < 3x, then
+    If 2n ≤ x < 3n, then
       LSB of x mod n is 0! (because n is odd and subtracted from `x` twice)
-    If x ≥ 3x, then
+    If 3n ≤ x     , then
       LSB of x mod n is 1! (because n is odd and subtracted from `x` thrice)
 
 If we combine the last two results, we know in which "quadrant" of the modulus space `p` is in. That is, if we were to separate the range of all of its possible values, we know in which quarter of this range it lies in.
@@ -612,6 +612,8 @@ We have the flag, but let's decrypt the full user interaction:
 
 **Description**
 
+> We have a photo and a CSV file. NOTE: The flag does not follow the CTF{...} format, but is clearly marked as the flag. Please add the CTF{...} around the flag manually when submitting.
+
 **Files provided**
 
  - [a ZIP file](files/wired-csv.zip) containing:
@@ -745,7 +747,7 @@ It is not perfect, but it is close. `A` got misread as `S` in the word `FLAG`, a
 
 ## 293 RE / Back to the Basics ##
 
-**Description**£
+**Description**
 
 > You won't find any assembly in this challenge, only C64 BASIC. Once you get the password, the flag is CTF{password}. P.S. The challenge has been tested on the VICE emulator.
 
